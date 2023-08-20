@@ -1,4 +1,5 @@
 .VSCodeCounter/
+.vscode/
 
 configServer/configServer
 
@@ -7,6 +8,7 @@ gateway/gateway
 oauth-service/oauth-service
 
 sk-admin/sk-admin
+sk-admin/sk-admin*.log
 
 sk-app/sk-app
 sk-app/sk-app*.log
