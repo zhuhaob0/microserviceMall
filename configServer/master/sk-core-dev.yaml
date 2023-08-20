@@ -1,0 +1,51 @@
+### 秒杀性能配置
+
+service:
+  ipSecAccessLimit: 15
+  ipMinAccessLimit: 1000
+  userSecAccessLimit: 15
+  userMinAccessLimit: 1000
+  writeProxy2layerGoroutineNum: 100
+  readProxy2layerGoroutineNum: 100
+  cookieSecretkey: zxfyazzaa
+  referWhitelist: test,test1
+  AppWriteToHandleGoroutineNum: 10
+  AppReadFromHandleGoroutineNum: 10
+  CoreReadRedisGoroutineNum: 10
+  CoreWriteRedisGoroutineNum: 10
+  CoreHandleGoroutineNum: 10
+  AppWaitResultTimeout: 10000
+  CoreWaitResultTimeout: 10000
+  MaxRequestWaitTimeout: 10000
+  SendToWriteChanTimeout: 10000
+  SendToHandleChanTimeout: 10000
+  TokenPassWd: go
+
+redis:
+  host: localhost:6379
+  password:
+  db: 0
+  proxy2layerQueueName: app2core
+  layer2proxyQueueName: core2app
+  layer2DBQueueName: core2db
+  ipBlackListHash: 12
+  idBlackListQueue: 12
+
+etcd:
+  host: localhost
+  product_key: zxfyazzaa
+
+http:
+  host: localhost
+
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  user: root
+  pwd: root
+  db: finalDesign
+
+trace:
+  host: 127.0.0.1
+  port: 9411
+  url: /api/v2/spans

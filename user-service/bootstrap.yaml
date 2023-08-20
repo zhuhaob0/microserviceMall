@@ -1,0 +1,19 @@
+http:
+  host: 127.0.0.1
+  port: 9009
+
+rpc:
+  host: localhost
+  port: 9008
+
+discover:
+  host: 127.0.0.1
+  port: 8500
+  instanceId: user-service-localhost
+  serviceName: user
+  weight: 10
+
+config:
+  id: config-service
+  profile: "dev"
+  label: "master"

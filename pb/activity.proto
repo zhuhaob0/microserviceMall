@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "fibal-design/pb";
+
+service ActivityService {
+  rpc secKill(SecRequest) returns (SecResponse) {}
+}
+
+message Activity {
+  int64 Activity = 1;      // 活动Id
+  string ActivityName = 2; // 活动名称
+  int64 ProductId = 3;     // 商品Id
+  int64 StartTime = 4;     // 开始时间
+  int64 EndTime = 5;       // 结束时间
+  int64 Total = 6;         // 商品总数
+  int64 Status = 7;        // 状态
+  string StartTimeStr = 8;
+  string EndTimeStr = 9;
+  string StatusStr = 10;
+  int64 Speed = 11;
+  int64 BuyLimit = 12;
+  double BuyRate = 13;
+}
+
+message SecProductInfoConf {
+  int64 ProductId = 1;         // 商品Id
+  int64 StartTime = 2;         // 开始时间
+  int64 EndTime = 3;           // 结束时间
+  int64 Status = 4;            // 状态
+  int64 Total = 5;             // 商品总数
+  int64 Left = 6;              // 剩余商品总量
+  int64 OnePersonBuyLimit = 7; // 一个人购买限制
+  double BuyRate = 8;          // 买中几率
+  int64 SoldMaxLimit = 9;      // 每秒对多能卖多少
+}
+
+message SecRequest {
+  int64 ProductId = 1;
+  string Source = 2;
+  string AuthCode = 3;
+  string SecTime = 4;
+  string Nance = 5;
+  int64 UserId = 6;
+  string UserAuthSign = 7;
+  int64 AccessTime = 8;
+  string ClientAddr = 9;
+  string ClientRefence = 10;
+}
+
+message SecResponse {
+  int64 ProductId = 1;
+  int64 UserId = 2;
+  string Token = 3;
+  int64 TokenTime = 4;
+  int64 Code = 5;
+}
